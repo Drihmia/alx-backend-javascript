@@ -1,3 +1,11 @@
+# mine:
+.eslintrc.js
+*main.js
+*package*
+node_modules/
+*config*
+
+
 .architect
 bootstrap.css
 bootstrap.js
