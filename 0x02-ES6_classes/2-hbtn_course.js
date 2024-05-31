@@ -19,7 +19,7 @@ export default class HolbertonCourse {
 
   // Getter and Setter for length -------------------------------------
   get length() {
-    return this._Length; // eslint-disable-line no-underscore-dangle
+    return this._length; // eslint-disable-line no-underscore-dangle
   }
 
   set length(value) {
