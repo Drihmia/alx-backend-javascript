@@ -5,7 +5,7 @@ export default function cleanSet(set, startString) {
   const trimmedStrList = [];
 
   for (const str of set) {
-    if (str.startsWith(startString)) {
+    if (typeof str === 'string' && str.startsWith(startString)) {
       trimmedStrList.push(str.slice(startString.length));
     }
   }
