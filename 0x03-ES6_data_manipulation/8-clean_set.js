@@ -9,5 +9,5 @@ export default function cleanSet(set, startString) {
       trimmedStrList.push(str.substring(startString.length));
     }
   }
-  return trimmedStrList.join('-');
+  return trimmedStrList.filter((str) => str.trim().length !== 0).join('-');
 }
