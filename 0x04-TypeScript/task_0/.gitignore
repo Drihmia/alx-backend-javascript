@@ -1,0 +1,5 @@
+*.js
+!*webpack.config.js
+!*.eslintrc.js
+!*package.json
+!*tsconfig.json
