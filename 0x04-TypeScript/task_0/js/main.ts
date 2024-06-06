@@ -5,19 +5,19 @@ interface Student {
 	location: string;
 }
 
-const studentOne = {
+const studentOne: Student = {
 	firstName: 'Redouane',
 	lastName: 'Drihmia',
 	age: 30,
 	location: 'MA',
 };
 
-const studentTwo = {
+const studentTwo: Student = {
 	firstName: 'Red',
 	lastName: 'Dri',
 	age: 29,
 	location: 'MA',
 };
 
-const studentsList = [studentOne, studentOne];
-export default  studentsList;
+const studentsList: Student[] = [studentOne, studentTwo];
+export default studentsList;
