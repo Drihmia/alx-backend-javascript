@@ -29,7 +29,7 @@ async function countStudents(path) {
     // Remove header line.
     lines.shift();
   } catch (e) {
-    throw new Error('Cannot load the database');
+    // throw new Error('Cannot load the database');
   }
 
   const numberStudent = lines.length;
