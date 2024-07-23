@@ -37,13 +37,13 @@ async function countStudents(path) {
   const dict = {};
   for (const line of lines) {
     const field = line[line.length - 1];
+    const studentName = line[0];
 
     if (field && !(field in dict)) dict[field] = [];
 
-    if (field) dict[field].push(line[0]);
+    if (field) dict[field].push(studentName);
   }
 
-  // loggin to the stdout:
   let textBody = `Number of students: ${numberStudent}\n`;
   for (const [k, v] of Object.entries(dict)) {
     textBody += `Number of students in ${k}: ${v.length}. List: ${v.join(', ')}\n`;
@@ -52,13 +52,13 @@ async function countStudents(path) {
 }
 
 const app = http.createServer((req, resp) => {
-  resp.writeHead(200, { 'Content-Type': 'text/plain' });
+  resp.setHeader('Content-Type', 'text/plain');
   if (req.url === '/') {
     resp.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     const fileName = process.argv[2];
     resp.write('This is the list of our students');
-    countStudents(fileName).then((data) => resp.end(data));
+    countStudents(fileName).then((data) => resp.end(data.toString()));
   }
 });
 
