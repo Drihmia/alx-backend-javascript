@@ -1,11 +1,11 @@
-import promises from 'fs';
+import readFile from 'fs';
 
 export default async function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
     const lines = [];
 
     try {
-      promises.readFile(filePath, (err, data) => {
+      readFile(filePath, (err, data) => {
         if (data) {
           let line = [];
           let word = '';
