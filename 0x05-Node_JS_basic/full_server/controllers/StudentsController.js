@@ -12,8 +12,8 @@ export default class StudentsController {
         content += `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}\n`;
       }
       content = content.trim();
-      response.status(200).send(content);
-    }).catch(() => response.send(500, 'Cannot load the database'));
+      response.status(200).end(content);
+    }).catch(() => response.end(500, 'Cannot load the database'));
   }
 
   static getAllStudentsByMajor(request, response) {
@@ -22,20 +22,18 @@ export default class StudentsController {
     const { params } = { ...request };
 
     if (params === undefined || params.major === undefined) {
-      response.status(500).send('Major parameter must be CS or SWE');
+      response.status(500).end('Major parameter must be CS or SWE');
       return;
     }
     const { major } = { ...params };
     if (!(['SWE', 'CS'].includes(major))) {
-      response.status(500).send('Major parameter must be CS or SWE');
+      response.status(500).end('Major parameter must be CS or SWE');
       return;
     }
 
     readDatabase(process.argv[2]).then((data) => {
       response.setHeader('Content-Type', 'text/plain');
-      response.status(200).send(`List: ${data[major].join(', ')}`);
-    }).catch(() => response.status(500).send('Cannot load the database'));
+      response.status(200).end(`List: ${data[major].join(', ')}`);
+    }).catch(() => response.status(500).end('Cannot load the database'));
   }
 }
-
-StudentsController.getAllStudents();

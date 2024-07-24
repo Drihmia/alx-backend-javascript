@@ -4,8 +4,8 @@ import AppController from '../controllers/AppController';
 
 const router = Router();
 
-router.get('/', (req, resp) => AppController.getHome(req, resp));
-router.get('/students', (req, resp) => StudentsController.getAllStudents(req, resp));
-router.get('/students/:major', (req, resp) => StudentsController.getAllStudentsByMajor(req, resp));
+router.get('/', AppController.getHome);
+router.get('/students', StudentsController.getAllStudents);
+router.get('/students/:major', StudentsController.getAllStudentsByMajor);
 
 export default router;

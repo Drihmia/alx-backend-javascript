@@ -1,6 +1,6 @@
-import readFile from 'fs';
+const { readFile } = require('fs');
 
-export default async function readDatabase(filePath) {
+function readDatabase(filePath) {
   return new Promise((resolve, reject) => {
     if (!filePath) {
       reject(new Error('Cannot load the database'));
@@ -8,7 +8,7 @@ export default async function readDatabase(filePath) {
     }
 
     const lines = [];
-    readFile(filePath, (err, data) => {
+    readFile(filePath, 'utf8', (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
         return;
@@ -53,3 +53,5 @@ export default async function readDatabase(filePath) {
     });
   });
 }
+
+export default readDatabase;
