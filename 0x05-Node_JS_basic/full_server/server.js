@@ -1,11 +1,11 @@
 import Express from 'express';
-import router from './routes';
+import mapingRoutes from './routes/index';
 
 const app = Express();
 
 const port = 1245;
 
-app.use('/', router);
+mapingRoutes(app);
 
 app.listen(port);
 

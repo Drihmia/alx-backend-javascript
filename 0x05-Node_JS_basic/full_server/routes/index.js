@@ -1,11 +1,10 @@
-import { Router } from 'express';
 import StudentsController from '../controllers/StudentsController';
 import AppController from '../controllers/AppController';
 
-const router = Router();
+const mapingRoutes = (app) => {
+  app.get('/', AppController.getHome);
+  app.get('/students', StudentsController.getAllStudents);
+  app.get('/students/:major', StudentsController.getAllStudentsByMajor);
+};
 
-router.get('/', AppController.getHome);
-router.get('/students', StudentsController.getAllStudents);
-router.get('/students/:major', StudentsController.getAllStudentsByMajor);
-
-export default router;
+export default mapingRoutes;
