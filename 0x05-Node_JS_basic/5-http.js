@@ -62,4 +62,5 @@ const app = http.createServer((req, resp) => {
   }
 });
 
-module.exports = app.listen(1245);
+app.listen(1245);
+module.exports = app;

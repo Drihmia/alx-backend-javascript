@@ -62,4 +62,6 @@ app.get('/students', async (req, res) => {
   res.send(`This is the list of our students\n${await countStudents(filePath)}`);
 });
 
-module.exports = app.listen(port, () => {});
+app.listen(port, () => {});
+
+module.exports = app;
