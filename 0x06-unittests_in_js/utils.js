@@ -1,6 +1,4 @@
 const Utils = {
-  name: 'Utils',
-
   calculateNumber(type, a, b) {
     const divide = (argOne, argTwo) => {
       if (!Math.round(b)) return 'Error';

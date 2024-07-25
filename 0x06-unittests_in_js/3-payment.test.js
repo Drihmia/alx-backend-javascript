@@ -1,10 +1,7 @@
-'use strict';
-
 const { expect } = require('chai');
-
 const sinon = require('sinon');
-const sendPaymentRequestToApi = require('./3-payment');
 const Utils = require('./utils');
+const { sendPaymentRequestToApi } = require('./3-payment');
 
 describe('sendPaymentRequestToApi', () => {
   let calculateNumberSpy;
@@ -21,11 +18,19 @@ describe('sendPaymentRequestToApi', () => {
     sinon.restore();
   });
 
-  it('when calling sendPaymentRequestToApi, should call calculateNumber with the args : "SUM" and a, b', () => {
-    // const res = Utils.calculateNumber('SUM', 10, 20);
+  it('when calling sendPaymentRequestToApi, should call calculateNumber once', () => {
+    // CALL THE FUNCTION ONCE
     sendPaymentRequestToApi(a, b);
 
+    // CHECK IF THE FUNCTION WAS CALLED ONCE
     expect(calculateNumberSpy.called).to.be.true;
+  });
+
+  it('when calling sendPaymentRequestToApi, should call calculateNumber with the args : "SUM" and a, b', () => {
+    // CALL THE FUNCTION ONCE
+    sendPaymentRequestToApi(a, b);
+
+    // CHECK IF THE FUNCTION WAS CALLED WITH THE RIGHT ARGUMENTS
     expect(calculateNumberSpy.calledOnceWithExactly('SUM', a, b)).to.equal(true);
   });
 });

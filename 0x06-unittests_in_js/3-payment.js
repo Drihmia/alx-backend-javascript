@@ -4,4 +4,4 @@ function sendPaymentRequestToApi(totalAmount, totalShipping) {
   return Utils.calculateNumber('SUM', totalAmount, totalShipping);
 }
 
-module.exports = sendPaymentRequestToApi;
+module.exports = { sendPaymentRequestToApi };
