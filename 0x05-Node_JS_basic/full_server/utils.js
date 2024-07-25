@@ -1,4 +1,4 @@
-const { readFile } = require('fs');
+import { readFile } from 'fs';
 
 function readDatabase(filePath) {
   return new Promise((resolve, reject) => {

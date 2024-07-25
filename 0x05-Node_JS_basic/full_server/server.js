@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import Express from 'express';
-import mapingRoutes from './routes/index';
+import mapingRoutes from './routes/index.js';
 
 const app = Express();
 

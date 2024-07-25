@@ -1,4 +1,4 @@
-import readDatabase from '../utils';
+import readDatabase from '../utils.js';
 
 export default class StudentsController {
   static getAllStudents(request, response) {
@@ -13,7 +13,10 @@ export default class StudentsController {
       }
       content = content.trim();
       response.status(200).end(content);
-    }).catch(() => response.end(500, 'Cannot load the database'));
+    }).catch((err) => {
+      console.log(err);
+      response.end(500, 'Cannot load the database');
+    });
   }
 
   static getAllStudentsByMajor(request, response) {
