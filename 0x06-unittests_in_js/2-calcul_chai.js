@@ -1,6 +1,6 @@
 /**
  * Round a and b and return the sum
- * @param {string} type - The type of operation
+ * @param {string} type - The type of operation.
  * @param {number} a - The first number.
  * @param {number} b - the second number.
  * @returns {number} return the sum.
