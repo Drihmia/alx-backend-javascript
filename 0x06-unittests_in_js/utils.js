@@ -10,7 +10,8 @@ const Utils = {
       DIVIDE: divide(a, b),
     };
 
-    return operationObject[type];
+    const output = operationObject[type];
+    return output;
   },
 };
 
