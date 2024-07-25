@@ -29,7 +29,7 @@ async function countStudents(path) {
     // Remove header line.
     lines.shift();
   } catch (e) {
-    // throw new Error('Cannot load the database');
+    return 'Cannot load the database';
   }
 
   const numberStudent = lines.length;
@@ -57,7 +57,7 @@ const app = http.createServer((req, resp) => {
     resp.end('Hello Holberton School!');
   } else if (req.url === '/students') {
     const fileName = process.argv[2];
-    resp.write('This is the list of our students');
+    resp.write('This is the list of our students\n');
     countStudents(fileName).then((data) => resp.end(data.toString()));
   }
 });
