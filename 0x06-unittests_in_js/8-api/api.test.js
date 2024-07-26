@@ -4,16 +4,8 @@ const request = require('request');
 const app = require('./api');
 
 describe('Index page', () => {
-
-
-
   it.only('check status code to 200', (done) => {
     request.get('http://localhost:7865', (err, res, body) => {
-      if (err) {
-        console.log(err);
-      }
-      console.log(res.statusCode);
-      console.log(res.request.path);
       expect(res.statusCode).to.equal(200);
       expect(res.body).to.equal('Welcome to the payment system');
       expect(res.request.method).to.equal('GET');
