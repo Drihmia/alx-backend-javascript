@@ -4,17 +4,7 @@ const request = require('request');
 const app = require('./api');
 
 describe('Index page', () => {
-  let server;
 
-  // Start the server before running tests
-  before((done) => {
-    server = app.listen(7865, done);
-  });
-
-  // Close the server after running tests
-  after((done) => {
-    server.close(done);
-  });
 
 
   it.only('check status code to 200', (done) => {
