@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-import Express from 'express';
+import express from 'express';
 import mapingRoutes from './routes/index.js';
 
-const app = Express();
+const app = express();
 
 const port = 1245;
 
