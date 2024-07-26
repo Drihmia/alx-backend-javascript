@@ -29,4 +29,17 @@ describe('Index page', () => {
       done()
     });
   });
+
+  it.only('check id from /student/:id  : INVALID TEST', (done) => {
+    request.get('http://localhost:7865/cart/abc', (err, res, body) => {
+      expect(res.statusCode).to.equal(404);
+      expect(res.body).to.equal('Cart ID is invalid');
+      expect(res.request.method).to.equal('GET');
+      expect(res.headers['content-length']).to.equal('18');
+      expect(res.request.port).to.equal('7865');
+      expect(res.request.host).to.equal('localhost');
+      expect(res.request.path).to.equal('/cart/abc');
+      done()
+    });
+  });
 });
