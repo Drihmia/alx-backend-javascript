@@ -1,6 +1,7 @@
-export default class AppController {
-  static getHome(request, response) {
-    request.statusCode = 200;
-    response.end('Hello Holberton School!');
+class AppController {
+  static getHomepage(request, response) {
+    response.status(200).send('Hello Holberton School!');
   }
 }
+
+export default AppController;
