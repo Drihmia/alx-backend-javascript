@@ -23,13 +23,13 @@ class StudentsController {
   static getAllStudentsByMajor (request, response) {
     if (request === undefined) return;
 
-    const { params } = { ...request };
+    const { params } = request;
 
     if (params === undefined || params.major === undefined) {
       response.status(500).send('Major parameter must be CS or SWE');
       return;
     }
-    const { major } = { ...params };
+    const { major } = params;
     if (!(['SWE', 'CS'].includes(major))) {
       response.status(500).send('Major parameter must be CS or SWE');
       return;
