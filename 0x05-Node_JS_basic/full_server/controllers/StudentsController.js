@@ -1,7 +1,7 @@
 import readDatabase from '../utils';
 
 class StudentsController {
-  static getAllStudents (request, response) {
+  static getAllStudents(request, response) {
     if (response === undefined) return;
 
     const DbFilePath = process.argv[2];
@@ -20,7 +20,7 @@ class StudentsController {
     });
   }
 
-  static getAllStudentsByMajor (request, response) {
+  static getAllStudentsByMajor(request, response) {
     if (request === undefined) return;
 
     const { params } = request;
